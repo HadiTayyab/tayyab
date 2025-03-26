@@ -1,7 +1,7 @@
 import streamlit as st
 import json
 
-with open("C:/Users/Hadi/Downloads/New folder/quran.json", "r", encoding="utf-8") as file:
+with open("quran.json", "r", encoding="utf-8") as file:
     quran_data = json.load(file)
 
 st.markdown("""
@@ -14,6 +14,5 @@ st.markdown("""
 st.title("The Majestic Quran")
 
 for surah in quran_data:
-    st.markdown(f"### {surah['name']}")
     for ayah in surah['verses']:
-        st.markdown(ayah['text'])
+        st.write(ayah['text'])
